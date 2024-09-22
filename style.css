@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.lexend {
+    font-family: "Lexend", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  /* .nav_bar{
+    padding: 20px 0 50px;
+  } */
+  .main_btn{
+    background-color: white;
+    padding: 50px 0 20px;
+  }
+  ::placeholder{
+    font-family: "Lexend", sans-serif;
+    color: rgba(17, 17, 17,0.4);
+    font-size: 16px;
+    font-weight: 300;
+  }
