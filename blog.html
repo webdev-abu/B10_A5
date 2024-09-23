@@ -15,29 +15,29 @@
      <link rel="stylesheet" href="style.css">
 </head>
 <body class="lexend bg-white">
-    <header class="bg-[rgba(249,247,243,0.6)] fixed w-full top-0 left-0 z-50 backdrop-blur-sm">
-        <div class="nav_bar">
-            <div class="navbar p-6 md:p-12 bg-[rgba(249,247,243,0.7)]">
-                <div class="navbar-start">
-                  <a href="index.html" class="btn bg-transparent text-[#ffffff] font-semibold text-[20px]  bg-gradient-to-r from-[#4568dc] to-[#b06ab3] hover:bg-gradient-to-r hover:from-[#4568dc] hover:to-[#b06ab3] border-none">Home</a>
-                </div>
-                <div class="navbar-center">
-                    <img src="assets/logo.png" alt="Logo" class="image_fuild" >
-                    <a class="btn btn-ghost text-xl hidden md:flex text-[#111111] font-semibold text-[20px]">Donate Bangladesh</a>
-                </div>
-                <div class="navbar-end text-[rgba(17,17,17,0.7)] font-medium text-[20px]">
-                    <img src="assets/coin.png" alt="Coin" class="image_fuild mr-2">
-                    <p>5000</p>
-                    <span class="ml-2">BDT</span>
-                </div>
+  <header class="bg-[rgba(249,247,243,0.6)] fixed w-full top-0 left-0 z-50   backdrop-blur-sm">
+      <div class="nav_bar">
+          <div class="navbar p-6 md:p-12 bg-[rgba(249,247,243,0.7)]">
+              <div class="navbar-start">
+                <a href="index.html" class="md:btn bg-transparent px-4 py-1.5 rounded-[8px] text-[#ffffff] font-semibold text-[13px] md:text-[20px]  bg-gradient-to-r from-[#4568dc] to-[#b06ab3] hover:bg-gradient-to-r hover:from-[#4568dc] hover:to-[#b06ab3] border-none">Home</a>
               </div>
-              <div class="main_btn flex justify-center gap-5 backdrop-blur-sm">
-                <button class="btn btn-outline active:bg-gradient-to-r active:from-[#4568dc] active:to-[#b06ab3] active:text-[#111111] text-[rgba(17,17,17,0.7)] font-medium text-[20px] hover:bg-transparent">Donation</button>
-                <button class="btn btn-outline text-[rgba(17,17,17,0.7)] font-medium text-[20px] hover:bg-transparent">History</button>
+              <div class="navbar-center">
+                  <img src="assets/logo.png" alt="Logo" class="image_fuild w-[50%] md:w-full" >
+                  <a class="btn btn-ghost text-xl hidden md:flex text-[#111111] font-semibold text-[20px]">Donate Bangladesh</a>
               </div>
-        </div>
-    </header>
-    <main class="grid grid-cols-1 gap-8 mt-[215px] bg-gray-100 py-12">
+              <div class="navbar-end text-[rgba(17,17,17,0.7)] font-medium text-[13px] md:text-[20px]">
+                  <img src="assets/coin.png" alt="Coin" class="image_fuild mr-2">
+                  <p id="total-donete-price">6500.00</p>
+                  <span class="ml-2">BDT</span>
+              </div>
+            </div>
+            <div class="main_btn flex justify-center gap-5">
+              <button id="donation-button" class="btn btn-outline  text-[rgba(17,17,17,0.7)] font-medium text-[20px] hover:bg-transparent">Donation</button>
+              <button id="history-button" class="btn btn-outline text-[rgba(17,17,17,0.7)] font-medium text-[20px] hover:bg-transparent">History</button>
+            </div>
+      </div>
+  </header>
+    <main class="grid grid-cols-1 gap-8 mt-[196px] md:mt-[262px] bg-gray-100 py-12">
         <div class="bg-gray-100 overflow-x-hidden">
            
         
@@ -73,7 +73,7 @@
                                 <div class="collapse-content">
                                   <p class="text-[rgba(17,17,17,0.5)] font-light text-[16px]">To manipulate an element's attributes and styles using the DOM in JavaScript, you first need to select the desired element using methods like getElementById, querySelector, or getElementsByClassName, then access its properties like setAttribute to change attributes and style to modify CSS styles directly on the element.</p>
                                 </div>
-                              </div>
+                            </div>
                           </div>
                           
                         <div class="mt-8">
@@ -109,4 +109,15 @@
         </div>
     </main>
 </body>
+<script>
+  const historyButton = document.getElementById("history-button");
+const donationButton = document.getElementById("donation-button");
+historyButton.addEventListener("click", function () {
+  window.location.href = "./index.html";
+});
+
+donationButton.addEventListener("click", function () {
+   window.location.href = "./index.html";
+});
+</script>
 </html>

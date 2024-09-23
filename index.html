@@ -19,25 +19,25 @@
         <div class="nav_bar">
             <div class="navbar p-6 md:p-12 bg-[rgba(249,247,243,0.7)]">
                 <div class="navbar-start">
-                  <a href="blog.html" class="btn bg-transparent text-[#ffffff] font-semibold text-[20px]  bg-gradient-to-r from-[#4568dc] to-[#b06ab3] hover:bg-gradient-to-r hover:from-[#4568dc] hover:to-[#b06ab3] border-none">Blog</a>
+                  <a href="blog.html" class="md:btn bg-transparent px-4 py-1.5 rounded-[8px] text-[#ffffff] font-semibold text-[13px] md:text-[20px]  bg-gradient-to-r from-[#4568dc] to-[#b06ab3] hover:bg-gradient-to-r hover:from-[#4568dc] hover:to-[#b06ab3] border-none">Blog</a>
                 </div>
                 <div class="navbar-center">
-                    <img src="assets/logo.png" alt="Logo" class="image_fuild" >
+                    <img src="assets/logo.png" alt="Logo" class="image_fuild w-[50%] md:w-full" >
                     <a class="btn btn-ghost text-xl hidden md:flex text-[#111111] font-semibold text-[20px]">Donate Bangladesh</a>
                 </div>
-                <div class="navbar-end text-[rgba(17,17,17,0.7)] font-medium text-[20px]">
+                <div class="navbar-end text-[rgba(17,17,17,0.7)] font-medium text-[13px] md:text-[20px]">
                     <img src="assets/coin.png" alt="Coin" class="image_fuild mr-2">
                     <p id="total-donete-price">6500.00</p>
                     <span class="ml-2">BDT</span>
                 </div>
               </div>
               <div class="main_btn flex justify-center gap-5">
-                <button class="btn btn-outline active:bg-gradient-to-r active:from-[#4568dc] active:to-[#b06ab3] active:text-[#111111] text-[rgba(17,17,17,0.7)] font-medium text-[20px] hover:bg-transparent">Donation</button>
-                <button class="btn btn-outline text-[rgba(17,17,17,0.7)] font-medium text-[20px] hover:bg-transparent">History</button>
+                <button id="donation-button" class="btn btn-outline  text-[rgba(17,17,17,0.7)] font-medium text-[20px] hover:bg-transparent">Donation</button>
+                <button id="history-button" class="btn btn-outline text-[rgba(17,17,17,0.7)] font-medium text-[20px] hover:bg-transparent">History</button>
               </div>
         </div>
     </header>
-    <main class="mx-6 my-10 grid grid-cols-1 gap-8 mt-[262px] bg-white py-12">
+    <main id="donate-container" class="mx-6 my-10 grid grid-cols-1 gap-8 mt-[196px] md:mt-[262px] bg-white py-12">
         <div class="card lg:card-side  shadow-xl border border-1 border-[rgba(17,17,17,0.1)] p-8">
             <figure class="lg:w-1/2 w-full">
               <img
@@ -45,14 +45,17 @@
                 alt="Album" />
             </figure>
             <div class="card-body lg:w-1/2 w-full px-0 md:px-[32px]">
-                <div class="flex items-center gap-0 w-[130px] bg-[rgba(17,17,17,0.1)] p-2 rounded-[8px] text-[rgba(17,17,17,0.7)] text-[16px]">
+                <div class="flex items-center gap-0 w-[50%] md:w-[28%] bg-[rgba(17,17,17,0.1)] p-2 rounded-[8px] text-[rgba(17,17,17,0.7)] text-[16px]">
                     <img src="assets/coin.png" alt="Coin" class="image_fuild mr-2">
-                    <p id="donete-price_01">4000</p>
+                    <p id="donete-price_01">4000.00</p>
                     <span class="ml-2">BDT</span>
                 </div>
               <h2 id="card-title_01" class="card-title text-[#111111] font-bold text-[20px]">Donate for Flood at Noakhali, Bangladesh</h2>
               <p class="text-[rgba(17,17,17,0.7)] font-light text-[16px]"> The recent floods in Noakhali have caused significant damage to homes  infrastructure. Your donation will help provide essential supplies and  to those affected by this disaster. Every contribution, big or small, makes  difference. Please join us in supporting the relief efforts and making a positive impact on the lives of those in need.</p>
-              <input type="text" name="amount" id="amount" placeholder="Write Donation Amount" class="p-3 bg-white border border-1 border-[rgba(17,17,17,0.1)] outline-none mb-5 rounded-[8px]">
+              <input id="amount" placeholder="Write Donation Amount" class="p-3 bg-white border border-1 border-[rgba(17,17,17,0.1)] outline-none mb-3 rounded-[8px]">
+              <p id="amount-error" class="text-red-500 text-xs mt-1 hidden">
+                ⚠️ Invalid Amount!
+              </p>
               <button id="donete-btn-01" class="btn bg-gradient-to-r from-[#4568dc] to-[#b06ab3] border border-none text-[#ffffff]  font-bold text-[20px]">Donate Now</button>
               
             </div>
@@ -65,14 +68,17 @@
                 alt="Album" />
             </figure>
             <div class="card-body lg:w-1/2 w-full px-0 md:px-[32px]">
-                <div class="flex items-center gap-0 w-[130px] bg-[rgba(17,17,17,0.1)] p-2 rounded-[8px] text-[rgba(17,17,17,0.7)] text-[16px]">
+                <div class="flex items-center gap-0 w-[50%] md:w-[28%] bg-[rgba(17,17,17,0.1)] p-2 rounded-[8px] text-[rgba(17,17,17,0.7)] text-[16px]">
                     <img src="assets/coin.png" alt="Coin" class="image_fuild mr-2">
-                    <p id="donete-price_02">5000</p>
+                    <p id="donete-price_02">5000.00</p>
                     <span class="ml-2">BDT</span>
                 </div>
               <h2 id="card-title_02" class="card-title text-[#111111] font-bold text-[20px]">Donate for Flood Relief in Feni,Bangladesh</h2>
               <p class="text-[rgba(17,17,17,0.7)] font-light text-[16px]"> The recent floods in Feni have devastated local communities, leading to severe disruption and loss. Your generous donation will help provide immediate aid, including food, clean water, and medical supplies, to those affected by this calamity. Together, we can offer crucial support and help rebuild lives in the aftermath of this disaster. Every contribution counts towards making a real difference. Please consider donating today to assist those in urgent need.</p>
-              <input type="text" name="amount" id="amount" placeholder="Write Donation Amount" class="p-3 bg-white border border-1 border-[rgba(17,17,17,0.1)] outline-none mb-5 rounded-[8px]">
+              <input id="amount_02" placeholder="Write Donation Amount" class="p-3 bg-white border border-1 border-[rgba(17,17,17,0.1)] outline-none mb-3 rounded-[8px]">
+              <p id="amount_02-error" class="text-red-500 text-xs mt-1 hidden">
+                ⚠️ Invalid Amount!
+              </p>
               <button id="donete-btn-02" class="btn bg-gradient-to-r from-[#4568dc] to-[#b06ab3] border border-none text-[#ffffff] font-bold text-[20px]">Donate Now</button>
               
             </div>
@@ -85,22 +91,65 @@
                 alt="Album" />
             </figure>
             <div class="card-body lg:w-1/2 w-full px-0 md:px-[32px]">
-                <div class="flex items-center gap-0 w-[130px] bg-[rgba(17,17,17,0.1)] p-2 rounded-[8px] text-[rgba(17,17,17,0.7)] text-[16px]">
+                <div class="flex items-center gap-0 w-[50%] md:w-[28%] bg-[rgba(17,17,17,0.1)] p-2 rounded-[8px] text-[rgba(17,17,17,0.7)] text-[16px]">
                     <img src="assets/coin.png" alt="Coin" class="image_fuild mr-2">
-                    <p id="donete-price_02">5000</p>
+                    <p id="donete-price_03">3000.00</p>
                     <span class="ml-2">BDT</span>
                 </div>
               <h2 id="card-title_03" class="card-title text-[#111111] font-bold text-[20px]">Aid for Injured in the Quota Movement</h2>
               <p class="text-[rgba(17,17,17,0.7)] font-light text-[16px]">The recent Quota movement has resulted in numerous injuries and significant hardship for many individuals. Your support is crucial in providing medical assistance, rehabilitation, and necessary supplies to those affected. By contributing, you help ensure that injured individuals receive the care and support they need during this challenging time. Every donation plays a vital role in alleviating their suffering and aiding in their recovery. Please consider making a donation to support these brave individuals in their time of need.</p>
-              <input type="text" name="amount" id="amount" placeholder="Write Donation Amount" class="p-3 bg-white border border-1 border-[rgba(17,17,17,0.1)] outline-none mb-5 rounded-[8px]">
+              <input id="amount_03" placeholder="Write Donation Amount" class="p-3 bg-white border border-1 border-[rgba(17,17,17,0.1)] outline-none mb-3 rounded-[8px]">
+              <p id="amount_03-error" class="text-red-500 text-xs mt-1 hidden">
+                ⚠️ Invalid Amount!
+              </p>
               <button id="donete-btn-03" class="btn bg-gradient-to-r from-[#4568dc] to-[#b06ab3] border border-none text-[#ffffff] font-bold text-[20px]">Donate Now</button>
               
             </div>
         </div>
     </main>
+
+    <main id="history-container" class="grid grid-cols-1 gap-8 mt-[196px] md:mt-[262px] bg-gray-100 py-12 hidden">
+      <div class="bg-gray-100 overflow-x-hidden">
+        <div class="px-6 py-8">
+              <div class="flex justify-between container mx-auto">
+                  <div id="history-list" class="w-full"></div>
+                  
+              </div>
+          </div>
+      </div>
+  </main>
     <footer>
         <div class="container mx-auto text-center p-4 pt-6 md:p-6 lg:p-6">Design by Abu Tahir</div>
     </footer>
+
+    <!-- Model -->
+<dialog id="modal_success" class="modal">
+  <div class="modal-box bg-white text-center flex justify-center items-center flex-col">
+    <h3 class="text-[#111111] font-bold text-[20px]">Congrates!</h3>
+    <img src="assets/coin.png" alt="coin" class="max-w-[35px] my-8">
+    <p class="py-4">You have Donated for Humankind</p>
+    <p class="text-[#111111] font-semibold text-[20px]">Successfully</p>
+    <div class="modal-action">
+      <form method="dialog">
+        <button class="btn bg-[rgba(17,17,17,0.7)]">Close confirmation</button>
+      </form>
+    </div>
+  </div>
+</dialog>
+
+<dialog id="modal_error" class="modal">
+  <div class="modal-box bg-white text-center flex justify-center items-center flex-col">
+    <h3 class="text-[#111111] font-bold text-[20px]">Try Again!</h3>
+    <img src="assets/coin.png" alt="coin" class="max-w-[35px] my-8">
+    <p class="py-4">You have not enough balance to donate this amount</p>
+    <p class="text-[#111111] font-semibold text-[20px]">Error</p>
+    <div class="modal-action">
+      <form method="dialog">
+        <button class="btn bg-[rgba(17,17,17,0.7)]">Close confirmation</button>
+      </form>
+    </div>
+  </div>
+</dialog>
 </body>
 <script src="js/main.js"></script>
 </html>
