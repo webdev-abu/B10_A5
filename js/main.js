@@ -37,15 +37,11 @@ function formatCurrency(amount) {
 
 
   function addToAmount(doneteAmount) {
-    const historyItem = document.createElement("p");
-    // historyItem.className =
-    //   "text-[rgba(17,17,17,1)] font-bold text-[20px]";
-  
+    const historyItem = document.createElement("p");  
     historyItem.innerHTML = `${doneteAmount} Taka `;
     const amountContainer = document.getElementById("doneteAmount");
   
     amountContainer.innerHTML=historyItem.innerText;
-    // (historyItem, historyContainer.firstChild);
   }
   // history tab functionality
 
