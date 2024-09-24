@@ -53,7 +53,7 @@ const historyButton = document.getElementById("history-button");
 const donationButton = document.getElementById("donation-button");
 historyButton.addEventListener("click", function () {
     historyButton.classList.add(
-    "bg-gradient-to-r", 
+    "bg-gradient-to-r",
     "from-[#4568dc]", 
     "to-[#b06ab3]", 
     "text-[#111111]"
