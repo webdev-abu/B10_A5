@@ -25,9 +25,9 @@ function formatCurrency(amount) {
       "join join-vertical w-full";
   
     historyItem.innerHTML = `
-          <div class="join-item px-10 py-6 bg-white rounded shadow-md mb-4">
-            <p class="text-[rgba(17,17,17,1)] font-bold text-[20px]">${amount} Taka is Donated for ${donateTitle} </p>
-            <p class="text-[rgba(17,17,17,0.7)] font-light text-[16px] mt-3">Date : ${new Date()}</p>
+          <div class="join-item px-4 md:px-10 py-3 md:py-6 bg-white rounded shadow-md mb-4">
+            <p class="text-[rgba(17,17,17,1)] font-bold text-[16px] md:text-[20px]">${amount} Taka is Donated for ${donateTitle} </p>
+            <p class="text-[rgba(17,17,17,0.7)] font-light text-[14px] md:text-[16px] mt-3">Date : ${new Date()}</p>
           </div>
       `;
     const historyContainer = document.getElementById("history-list");
