@@ -35,6 +35,18 @@ function formatCurrency(amount) {
     historyContainer.insertBefore(historyItem, historyContainer.firstChild);
   }
 
+
+  function addToAmount(doneteAmount) {
+    const historyItem = document.createElement("p");
+    // historyItem.className =
+    //   "text-[rgba(17,17,17,1)] font-bold text-[20px]";
+  
+    historyItem.innerHTML = `${doneteAmount} Taka `;
+    const amountContainer = document.getElementById("doneteAmount");
+  
+    amountContainer.innerHTML=historyItem.innerText;
+    // (historyItem, historyContainer.firstChild);
+  }
   // history tab functionality
 
 const historyButton = document.getElementById("history-button");
@@ -75,108 +87,50 @@ donationButton.addEventListener("click", function () {
   getErrorMessageAdd("history-container");
 });
 
-// live validation for input
+// // live validation for input
 
-document.getElementById('amount').addEventListener('input', function(){
-  const inputValue = parseFloat(document.getElementById('amount').value);
+document.getElementById('donete-01Amount').addEventListener('input', function(){
+  const inputValue = parseFloat(document.getElementById('donete-01Amount').value);
   if(inputValue <= 0 || isNaN(inputValue)) {
-      getErrorMessageRemove('amount-error');
-      return ;
+      getErrorMessageRemove('donete-01Amount-error');
+      return false;
   }
 });
 
-document.getElementById('amount_02').addEventListener('input', function(){
-  const inputValue = parseFloat(document.getElementById('amount_02').value);
+document.getElementById('donete-02Amount').addEventListener('input', function(){
+  const inputValue = parseFloat(document.getElementById('donete-02Amount').value);
   if(inputValue <= 0 || isNaN(inputValue)) {
-      getErrorMessageRemove('amount_02-error');
-      return ;
+      getErrorMessageRemove('donete-02Amount-error');
+      return false;
   }
 });
 
-document.getElementById('amount_03').addEventListener('input', function(){
-  const inputValue = parseFloat(document.getElementById('amount_03').value);
+document.getElementById('donete-03Amount').addEventListener('input', function(){
+  const inputValue = parseFloat(document.getElementById('donete-03Amount').value);
   if(inputValue <= 0 || isNaN(inputValue)) {
-      getErrorMessageRemove('amount_03-error');
-      return ;
+      getErrorMessageRemove('donete-03Amount-error');
+      return false;
   }
 });
 
-const doneteBtn1 = document.getElementById('donete-btn-01');
 
-doneteBtn1.addEventListener("click", function() {
-      
-      const totalDonetePrice = parseFloat(getDoneteTitles('total-donete-price'));
-      const doneteTitles = getDoneteTitles('card-title_01');
-      const donetePrice = parseFloat(getDoneteTitles('donete-price_01'));
-      const doneteAmount = getInputFiuldValue('amount');
-      const totalBalance =totalDonetePrice - doneteAmount;
-      const totalDoneteBalance =donetePrice + doneteAmount;
+function getDonateValue(cardId) {
+  const totalDonetePrice = parseFloat(getDoneteTitles('total-donete-price'));
+  const donetePrice = parseFloat(getDoneteTitles(`${cardId}Price`));
+  const doneteTitles = getDoneteTitles(`${cardId}Title`);
+  const doneteAmount = parseFloat(getInputFiuldValue(`${cardId}Amount`));
+  const totalBalance =totalDonetePrice - doneteAmount;
+  const totalDoneteBalance =donetePrice + doneteAmount;
+  console.table({totalDonetePrice, doneteTitles,donetePrice,doneteAmount,totalBalance,totalDoneteBalance});
 
-      if(doneteAmount <= totalDonetePrice){
-        const totalDonetePriceElement =document.getElementById('total-donete-price');
-        totalDonetePriceElement.innerText = formatCurrency(totalBalance);
-        const totalBalanceElement =document.getElementById('donete-price_01');
-        totalBalanceElement.innerText = formatCurrency(totalDoneteBalance);
-
-        addToHistory(doneteAmount, doneteTitles);
-        modal_success.showModal()
-      }else{
-        // alert('You have not enough balance to donate this amount');
-        modal_error.showModal()
-      }
-     
-      
-    });
-
-
-const doneteBtn2 = document.getElementById('donete-btn-02');
-doneteBtn2.addEventListener("click", function() {
-      
-      const totalDonetePrice = parseFloat(getDoneteTitles('total-donete-price'));
-      const doneteTitles = getDoneteTitles('card-title_02');
-      const donetePrice = parseFloat(getDoneteTitles('donete-price_02'));
-      const doneteAmount = getInputFiuldValue('amount_02');
-      const totalBalance =totalDonetePrice - doneteAmount;
-      const totalDoneteBalance =donetePrice + doneteAmount;
-      console.table({totalDonetePrice, doneteTitles,donetePrice,doneteAmount,totalBalance,totalDoneteBalance})
-      if(doneteAmount <= totalDonetePrice){
-        const totalDonetePriceElement =document.getElementById('total-donete-price');
-        totalDonetePriceElement.innerText = formatCurrency(totalBalance);
-        const totalBalanceElement =document.getElementById('donete-price_02');
-        totalBalanceElement.innerText = formatCurrency(totalDoneteBalance);
-
-        addToHistory(doneteAmount, doneteTitles);
-        modal_success.showModal()
-      }else{
-        // alert('You have not enough balance to donate this amount');
-        modal_error.showModal()
-      }
-     
-      
-    });
-
-    const doneteBtn3 = document.getElementById('donete-btn-03');
-    doneteBtn3.addEventListener("click", function() {
-          
-          const totalDonetePrice = parseFloat(getDoneteTitles('total-donete-price'));
-          const doneteTitles = getDoneteTitles('card-title_03');
-          const donetePrice = parseFloat(getDoneteTitles('donete-price_03'));
-          const doneteAmount = getInputFiuldValue('amount_03');
-          const totalBalance =totalDonetePrice - doneteAmount;
-          const totalDoneteBalance =donetePrice + doneteAmount;
-          console.table({totalDonetePrice, doneteTitles,donetePrice,doneteAmount,totalBalance,totalDoneteBalance})
-          if(doneteAmount <= totalDonetePrice){
-            const totalDonetePriceElement =document.getElementById('total-donete-price');
-            totalDonetePriceElement.innerText = formatCurrency(totalBalance);
-            const totalBalanceElement =document.getElementById('donete-price_03');
-            totalBalanceElement.innerText = formatCurrency(totalDoneteBalance);
-    
-            addToHistory(doneteAmount, doneteTitles);
-            modal_success.showModal()
-          }else{
-            // alert('You have not enough balance to donate this amount');
-            modal_error.showModal()
-          }
-         
-          
-        });
+  if(doneteAmount <= totalDonetePrice &&  doneteAmount >0 ){
+    const totalDonetePriceElement =document.getElementById('total-donete-price');
+    totalDonetePriceElement.innerText = formatCurrency(totalBalance);
+    const totalBalanceElement =document.getElementById(`${cardId}Price`);
+    totalBalanceElement.innerText = formatCurrency(totalDoneteBalance);
+    addToHistory(doneteAmount, doneteTitles);
+    modal_success.showModal(addToAmount(doneteAmount));
+  }else{
+    modal_error.showModal(addToAmount(doneteAmount));
+  }
+}
